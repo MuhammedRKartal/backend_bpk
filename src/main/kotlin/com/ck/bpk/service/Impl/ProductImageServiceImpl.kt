@@ -14,9 +14,9 @@ import java.util.*
 @Service
 class ProductImageServiceImpl: ProductImageService {
     @Autowired
-    lateinit var productImageRepository: ProductImageRepository;
+    lateinit var productImageRepository: ProductImageRepository
     @Autowired
-    lateinit var productRepository: ProductRepository;
+    lateinit var productRepository: ProductRepository
 
     override fun getImages(): MutableList<ProductImage> = productImageRepository.findAll()
     override fun getImageById(imagePk: Long): ProductImage = productImageRepository.findByPk(imagePk)

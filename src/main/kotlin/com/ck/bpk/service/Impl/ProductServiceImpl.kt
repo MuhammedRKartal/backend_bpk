@@ -3,7 +3,6 @@ package com.ck.bpk.service.Impl
 import com.ck.bpk.model.Product
 import com.ck.bpk.repository.ProductRepository
 import com.ck.bpk.service.ProductService
-import org.apache.coyote.BadRequestException
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.util.Optional
@@ -12,7 +11,7 @@ import kotlin.NoSuchElementException
 @Service
 class ProductServiceImpl: ProductService {
     @Autowired
-    lateinit var productRepository: ProductRepository;
+    lateinit var productRepository: ProductRepository
 
     override fun getProducts(): MutableList<Product> = productRepository.findAll()
     override fun getProduct(productKey: String): Optional<Product> {

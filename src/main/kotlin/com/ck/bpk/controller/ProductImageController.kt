@@ -1,12 +1,10 @@
 package com.ck.bpk.controller
 
 import com.ck.bpk.dto.ImageDto
-import com.ck.bpk.dto.ErrorResponseObject
 import com.ck.bpk.model.ProductImage
 import com.ck.bpk.service.ProductImageService
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
-import java.time.LocalDateTime
 
 @RestController
 @RequestMapping("/products/images")
