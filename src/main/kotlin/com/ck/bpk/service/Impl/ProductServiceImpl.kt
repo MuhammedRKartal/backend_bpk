@@ -3,6 +3,7 @@ package com.ck.bpk.service.Impl
 import com.ck.bpk.model.Product
 import com.ck.bpk.repository.ProductRepository
 import com.ck.bpk.service.ProductService
+import org.apache.coyote.BadRequestException
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.util.Optional
