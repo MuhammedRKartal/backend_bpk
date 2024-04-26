@@ -1,17 +1,13 @@
 package com.ck.bpk.service.Impl
 
 import com.ck.bpk.model.Product
-import com.ck.bpk.model.ProductImage
 import com.ck.bpk.repository.ProductImageRepository
 import com.ck.bpk.repository.ProductRepository
 import com.ck.bpk.service.ProductService
-import com.fasterxml.jackson.annotation.JsonKey
-import com.fasterxml.jackson.annotation.JsonValue
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import java.util.Optional
 import kotlin.NoSuchElementException
-import kotlin.reflect.full.memberProperties
 
 @Service
 class ProductServiceImpl: ProductService {
