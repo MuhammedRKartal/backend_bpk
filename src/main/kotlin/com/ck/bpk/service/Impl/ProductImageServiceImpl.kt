@@ -21,19 +21,19 @@ class ProductImageServiceImpl: ProductImageService {
     override fun getImages(): MutableList<ProductImage> = productImageRepository.findAll()
     override fun getImageById(imagePk: Long): ProductImage = productImageRepository.findByPk(imagePk)
     override fun addImage(image: ImageDto): ProductImage {
-
         val newImage = ProductImage(url = image.url, altText = image.altText)
         val temp:Optional<Product> = productRepository.findByProductKey(image.productKey)
 
         if(temp.isPresent){
             temp.get().images.add(newImage)
-
         } else {
             throw NoSuchElementException("No product is with product key: ${image.productKey}")
         }
-
         return productImageRepository.save(newImage)
-
     }
-
+    override fun deleteImageByPk(pk: Long): ProductImage {
+        val image = productImageRepository.findByPk(pk)
+        productImageRepository.delete(image)
+        return image
+    }
 }

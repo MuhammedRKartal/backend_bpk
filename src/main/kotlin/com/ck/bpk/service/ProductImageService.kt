@@ -7,4 +7,5 @@ interface ProductImageService {
     fun getImages(): MutableList<ProductImage>
     fun getImageById(imagePk: Long): ProductImage
     fun addImage(image: ImageDto): ProductImage
+    fun deleteImageByPk(pk: Long): ProductImage
 }

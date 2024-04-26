@@ -9,12 +9,12 @@ data class Product(
     @GeneratedValue
     val pk: Long,
     @Column(unique = true)
-    val productKey: String,
-    val name: String,
-    val description: String,
-    val shortDescription: String,
-    val price: String,
-    val inStock: Boolean,
+    var productKey: String,
+    var name: String,
+    var description: String,
+    var shortDescription: String,
+    var price: String,
+    var inStock: Boolean,
 ){
     @OneToMany(cascade = [CascadeType.ALL])
     var images: MutableList<ProductImage> = mutableListOf()

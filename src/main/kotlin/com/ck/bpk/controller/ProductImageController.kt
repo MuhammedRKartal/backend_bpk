@@ -18,4 +18,8 @@ class ProductImageController(private val service: ProductImageService) {
     @PutMapping
     @ResponseStatus(HttpStatus.CREATED)
     fun addImage(@RequestBody image: ImageDto): ProductImage = service.addImage(image)
+
+    @DeleteMapping
+    @ResponseStatus(HttpStatus.OK)
+    fun deleteImageByPk(@RequestBody imagePk: Long) = service.deleteImageByPk(imagePk)
 }

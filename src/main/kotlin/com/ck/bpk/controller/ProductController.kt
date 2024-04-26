@@ -3,7 +3,9 @@ package com.ck.bpk.controller
 import com.ck.bpk.model.Product
 import com.ck.bpk.service.ProductService
 import org.springframework.http.HttpStatus
+import org.springframework.web.bind.annotation.DeleteMapping
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PatchMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -24,5 +26,13 @@ class ProductController(private val service: ProductService) {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     fun addProduct(@RequestBody product: Product): Product = service.addProduct(product)
+
+    @PatchMapping("/{productKey}")
+    fun updateProduct(@PathVariable productKey: String, @RequestBody changes: Map<String, Any?>) = service.updateProduct(productKey, changes)
+
+    @DeleteMapping("/{productKey}")
+    @ResponseStatus(HttpStatus.OK)
+    fun deleteProduct(@PathVariable productKey: String) = service.deleteProduct(productKey)
+
 
 }
